@@ -17,7 +17,7 @@
 
 <body>
 <a href="index.php?page=accounts&action=signout">Sign Out</a>
-
+<a href="index.php?page=tasks&action=create">New Task</a>
 <?php
 //this is how you print something
 
