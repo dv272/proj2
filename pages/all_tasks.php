@@ -17,6 +17,7 @@
 
 <body>
 <a href="index.php?page=accounts&action=signout">Sign Out</a>
+
 <?php
 //this is how you print something
 
