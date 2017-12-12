@@ -62,10 +62,19 @@ class tasksController extends http\controller
 
 
         $record = todos::findOne($_REQUEST['id']);
-        $record->body = $_REQUEST['body'];
+       // $record->body = $_REQUEST['body'];
+       	$record->id = $_REQUEST['id'];
+       	$record->message = $_POST['message'];
+        $record->ownerid = $_POST['ownerid'];
+        $record->owneremail = $_POST['owneremail'];
+        $record->createddate = $_POST['createddate'];
+        $record->duedate = $_POST['duedate'];
+        $record->isdone = intval($_POST['isdone']);
+        print_r($record->isdone);
+       	print_r($_POST);
+       	print_r($record);
         $record->save();
-        print_r($_POST);
-
+        
     }
 
     public static function save() {
