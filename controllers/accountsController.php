@@ -142,9 +142,18 @@ class accountsController extends http\controller
 
         }
 
-
-
-
     }
-
+	
+	
+	public static function signout()
+    {
+    	session_start();
+    	if(key_exists('userID',$_SESSION)) {
+    		unset($_SESSION['userID']);
+    		session_destroy();
+    		header("Location: index.php");
+        } else {
+        	echo 'you must be logged in to view tasks';
+        }
+    }
 }

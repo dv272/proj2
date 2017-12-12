@@ -25,7 +25,14 @@ class homepageController extends http\controller
 //template data contains what will show up in the $data variable in the homepage template
 //the name of the template 'homepage' becomes 'homepage.php' in the pages directory
 
-        self::getTemplate('homepage', $templateData);
+		session_start();
+		   if(key_exists('userID',$_SESSION)) {
+			   $userID = $_SESSION['userID'];
+				$records = todos::findTasksbyID($userID);
+				self::getTemplate('all_tasks', $records);
+		   } else {
+        		self::getTemplate('homepage', $templateData);
+		   }
     }
 
     public static function create()

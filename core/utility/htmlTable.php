@@ -7,7 +7,11 @@ class htmlTable
 {
     public static function genarateTableFromMultiArray($array)
     {
-
+		if(count($array) <= 1) {
+			echo "There are no tasks added by you!";
+			return;
+		}
+		
         $tableGen = '<table border="1"cellpadding="10">';
         $tableGen .= '<tr>';
         //this grabs the first element of the array so we can extract the field headings for the table

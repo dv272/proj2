@@ -90,6 +90,15 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'show';
         $routes[] = $route;
+        
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'signout';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'signout';
+        $routes[] = $route;
+        
 
         //This goes in the login form action method
         //GET METHOD index.php?page=accounts&action=login
