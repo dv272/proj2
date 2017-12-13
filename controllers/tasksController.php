@@ -45,11 +45,22 @@ class tasksController extends http\controller
     {
         if(isset($_POST['message'])) 
         {
-        	self::getTemplate('new_task');
+        	session_start();
+			$task = new todo();
+			$user = accounts::findUserbyID($_SESSION['userID']);
+			$task->id = '';
+			$task->createddate = $_POST['createddate'];
+			$task->message = $_POST['message'];
+			$task->duedate = $_POST['duedate'];
+			$task->ownerid = $user->id;
+			$task->owneremail = $user->email;
+			$task->isdone = 0;
+			$task->save();
+			header("Location: index.php?page=tasks&action=all");
         } 
         else
         {
-        	
+        	self::getTemplate('new_task');
         }
     }
 

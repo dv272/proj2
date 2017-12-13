@@ -16,8 +16,10 @@
 </head>
 
 <body>
-<a href="index.php?page=accounts&action=signout">Sign Out</a>
+
 <a href="index.php?page=tasks&action=create">New Task</a>
+<a href="index.php?page=accounts&action=show&id=<?php echo $_SESSION['userID']?>">My Account</a>
+<a href="index.php?page=accounts&action=signout">Sign Out</a>
 <?php
 //this is how you print something
 

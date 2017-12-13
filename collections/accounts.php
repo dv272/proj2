@@ -22,9 +22,22 @@ class accounts extends \database\collection
             } else {
                 return $recordsSet[0];
             }
-
-
-
     }
+    
+    public static function findUserbyID($userid)
+    {
+
+            $tableName = get_called_class();
+            $sql = 'SELECT * FROM ' . $tableName . ' WHERE id = ?';
+
+            $recordsSet = self::getResults($sql, $userid);
+
+            if (is_null($recordsSet)) {
+                return FALSE;
+            } else {
+                return $recordsSet[0];
+            }
+    }
+    
 }
 
