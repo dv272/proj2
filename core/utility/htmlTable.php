@@ -12,7 +12,7 @@ class htmlTable
 			return;
 		}
 		
-        $tableGen = '<table border="1"cellpadding="10">';
+        $tableGen = '<table border="1" cellpadding="10">';
         $tableGen .= '<tr>';
         //this grabs the first element of the array so we can extract the field headings for the table
         $fieldHeadings = $array[0];

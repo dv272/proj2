@@ -9,7 +9,14 @@
     <meta name="author" content="SitePoint">
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">
-
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
@@ -32,12 +39,12 @@
 
 <form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
 
-    First name: <input type="text" name="fname" value="<?php echo $data->fname; ?>"><br>
+    First name: <input type="text" name="fname" value="<?php echo $data->fname; ?>" required><br>
 
-    Last name: <input type="text" name="lname" value="<?php echo $data->lname; ?>"><br>
-    Email: <input type="text" name="email" value="<?php echo $data->email; ?>"><br>
-    Phone: <input type="text" name="phone" value="<?php echo $data->phone; ?>"><br>
-    Birthday: <input type="text" name="birthday" value="<?php echo $data->birthday; ?>"><br>
+    Last name: <input type="text" name="lname" value="<?php echo $data->lname; ?>" required><br>
+    Email: <input type="text" name="email" value="<?php echo $data->email; ?>" required><br>
+    Phone: <input type="text" name="phone" value="<?php echo $data->phone; ?>" required><br>
+    Birthday: <input type="text" name="birthday" value="<?php echo $data->birthday; ?>" required><br>
     Gender: <input type="text" name="gender" value="<?php echo $data->gender; ?>"><br>
     <input type="submit" value="Submit form">
 </form>
