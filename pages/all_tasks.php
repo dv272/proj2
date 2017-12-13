@@ -23,8 +23,25 @@
 <?php
 //this is how you print something
 
-print utility\htmlTable::genarateTableFromMultiArray($data);
-
+// print utility\htmlTable::genarateTableFromMultiArray($data);
+	if(count($data) > 1) {
+		echo '<table>
+			<tr>
+				<th>Message</th>
+				<th>Due Date</th>
+				<th>Status</th>
+				<th></th>
+			</tr>';
+			foreach ($data as $value) {
+				echo '<tr>
+					<td>'.$value->message.'</td>
+					<td>'.$value->duedate.'</td>
+					<td>'.$value->isdone.'</td>
+					<td><a href="index.php?page=tasks&action=show&id='.$value->id.'">Edit</a></td>
+				</tr>';
+			}
+		echo '</table>';
+	}
 
 ?>
 

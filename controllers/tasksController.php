@@ -88,10 +88,10 @@ class tasksController extends http\controller
         $record->duedate = $_POST['duedate'];
         $record->isdone = intval($_POST['isdone']);
         print_r($record->isdone);
-       	print_r($_POST);
-       	print_r($record);
+       	//print_r($_POST);
+       	//print_r($record);
         $record->save();
-        
+		header("Location: index.php?page=tasks&action=all");
     }
 
     public static function save() {
