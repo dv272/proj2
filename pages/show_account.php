@@ -20,22 +20,26 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
+    <?php include 'styles.php';?>
 </head>
 
 <body>
+
+<?php
+//this is how you print something  $data contains the record that was selected on the table.
+// print_r($data);
+	session_start();
+?>
+
+<div class="container">
+	<?php include 'navbar.php';?>
+</div>
 
 <h1>Email: <?php echo $data->email; ?></h1>
 <h1>First Name: <?php echo $data->fname; ?></h1>
 <h1>Last Name: <?php echo $data->lname; ?></h1>
 
 
-<?php
-//this is how you print something  $data contains the record that was selected on the table.
-
-// print_r($data);
-
-
-?>
 
 <form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
 

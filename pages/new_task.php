@@ -20,9 +20,16 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
+    <?php include 'styles.php';
+    	session_start();
+    ?>
 </head>
 
 <body>
+<div class="container">
+	<?php include 'navbar.php';?>
+	<div class="row"></div>
+</div>
 
 <form action="index.php?page=tasks&action=create" method="post">
 	Message: <input type="text" name="message" required><br>

@@ -20,37 +20,46 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
+    <?php include 'styles.php';?>
 </head>
 
 <body>
-
-<a href="index.php?page=tasks&action=create">New Task</a>
-<a href="index.php?page=accounts&action=show&id=<?php echo $_SESSION['userID']?>">My Account</a>
-<a href="index.php?page=accounts&action=signout">Sign Out</a>
-<?php
-//this is how you print something
-
-// print utility\htmlTable::genarateTableFromMultiArray($data);
-	if(count($data) > 1) {
-		echo '<table border="1" cellpadding="10">
-			<tr>
-				<th>Message</th>
-				<th>Due Date</th>
-				<th>Status</th>
-				<th></th>
-			</tr>';
+<div class="container">
+	<?php include 'navbar.php';?>
+	<h1></h1>
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8 outer-content-div">
+			<?php
+			if(count($data) > 1) {
+			
+			}
+			echo '<table class="table table-striped" id="all-task-table">
+			    <thead>
+			      <tr>
+			        <th>Message</th>
+			        <th>Due Date</th>
+			        <th>Status</th>
+			        <th></th>
+			      </tr>
+			    </thead>
+			    <tbody>';
 			foreach ($data as $value) {
 				echo '<tr>
-					<td>'.$value->message.'</td>
-					<td>'.$value->duedate.'</td>
-					<td>'.$value->isdone.'</td>
-					<td><a href="index.php?page=tasks&action=show&id='.$value->id.'">Edit</a></td>
-				</tr>';
+						<td><strong>'.ucfirst($value->message).'</strong></td>
+						<td>'.$value->duedate.'</td>
+						<td>'.$value->isdone.'</td>
+						<td><a id="edit-task-icon" href="index.php?page=tasks&action=show&id='.$value->id.'"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
+					</tr>';
 			}
-		echo '</table>';
-	}
+			echo '</tbody>
+			  </table>';
+			  ?>
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+</div>
 
-?>
 
 
 <script src="js/scripts.js"></script>
