@@ -72,7 +72,7 @@ class accountsController extends http\controller
             //You can make a template for errors called error.php
             // and load the template here with the error you want to show.
            // echo 'already registered';
-            $error = 'already registered';
+            $error = 'User Already Registered!';
             self::getTemplate('error', $error);
 
         }
@@ -122,7 +122,8 @@ class accountsController extends http\controller
 
 
         if ($user == FALSE) {
-            echo 'user not found';
+            $error = 'User Not Found!';
+            self::getTemplate('error', $error);
         } else {
 
             if($user->checkPassword($_POST['password']) == TRUE) {
@@ -138,7 +139,8 @@ class accountsController extends http\controller
         		header("Location: index.php?page=tasks&action=all");
                 
             } else {
-                echo 'password does not match';
+				$error = 'Password is wrong!';
+				self::getTemplate('error', $error);
             }
 
         }

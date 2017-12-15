@@ -25,11 +25,17 @@
 </head>
 
 <body>
-<?php include 'navbar.php';?>
-
-<h1>Page Not Found 404</h1>
-
-
+<div class="container">
+	<?php include 'navbar.php';?>
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8 outer-content-div" id="login-div">
+			<h1 id="login-header" class="form-title-head"><?php echo $data;?></h1>
+                
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+</div>
 <script src="js/scripts.js"></script>
 </body>
 </html>

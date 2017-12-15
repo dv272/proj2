@@ -20,7 +20,14 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
-    <?php include 'styles.php';?>
+    <?php include 'styles.php';
+    	
+	 function formatter($temp) {
+	 	$arr = explode(' ',$temp);
+	 	$arr = explode('-',$arr[0]);
+	 	return $arr[0].'-'.$arr[1].'-'.$arr[2];
+	 }
+    ?>
 </head>
 
 <body>
@@ -46,7 +53,7 @@
 					$status = ($value->isdone) == 0 ? "Incomplete" : "Done";
 					echo '<tr>
 							<td><strong>'.ucfirst($value->message).'</strong></td>
-							<td>'.$value->duedate.'</td>
+							<td>'.formatter($value->duedate).'</td>
 							<td>'.$status.'</td>
 							<td><a id="edit-task-icon" href="index.php?page=tasks&action=show&id='.$value->id.'"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
 						</tr>';

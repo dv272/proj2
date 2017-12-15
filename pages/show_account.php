@@ -38,7 +38,7 @@
 		<div class="col-sm-2"></div>
 		<div class="col-sm-8">
 			<div class="row">
-				<div class="col-sm-12 outer-content-div">
+				<div class="col-sm-12 outer-content-div" id="account-head-title">
 					<h2><?php echo ucfirst($data->fname).' '.ucfirst($data->lname);?></h2>
 					<h5>Email: <?php echo $data->email;?></h5>
 				</div>

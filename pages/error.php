@@ -20,13 +20,22 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
+ <?php include 'styles.php';
+    session_start();?>
 </head>
 
 <body>
-
-<h1><?php echo $data ?></h1>
-
-
+<div class="container">
+	<?php include 'navbar.php';?>
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8 outer-content-div" id="login-div">
+			<h1 id="login-header" class="form-title-head"><?php echo $data;?></h1>
+                
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+</div>
 <script src="js/scripts.js"></script>
 </body>
 </html>

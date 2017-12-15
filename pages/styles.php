@@ -1,4 +1,8 @@
 <style>
+	body {
+		background: linear-gradient(white, lightgray);
+		height: 800px;
+	}
 	a{
 		text-decoration: none;
 	}
@@ -13,8 +17,9 @@
 		height: 10%;
 	}
 	.form-title-head {
-		text-align: center;
+		text-align: left;
 		margin-bottom: 30px;
+		padding-left: 15px;
 	}
 	#home-btn {
 	    background-color: #56525278 !important;
@@ -34,10 +39,15 @@
 	}
 	#all-task-table {
 		color: #2d2b2b;
+		font-size: 20px;
 	}
 	thead {
 		font-family: sans-serif;
-		font-size: 16px;
+		font-size: 21px;
+	}
+	#account-head-title {
+		padding-left: 30px;
+		padding-bottom: 10px;
 	}
 	
 	/*
