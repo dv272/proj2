@@ -30,9 +30,14 @@
 						<ul class="nav navbar-nav">
 						  <li class="active"><a id="home-btn" href="index.php">Home</a></li>
 						</ul>
-						<ul class="nav navbar-nav navbar-right">
-                          <li><a id="register-btn" class="navbar-head-btn" href="index.php?page=accounts&action=register">Register</a></li>
-                        </ul>
+						<ul class="nav navbar-nav navbar-right">';
+						if(isset($_GET['action']) && $_GET['action'] == "register") {
+// 							print_r($_GET);
+							echo '<li><a id="register-btn" class="navbar-head-btn" href="index.php">Login</a></li>';
+						}else {
+                        	echo '<li><a id="register-btn" class="navbar-head-btn" href="index.php?page=accounts&action=register">Register</a></li>';
+						}
+                       echo '</ul>
 					  </div>
 					</nav>
 					';
