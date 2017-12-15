@@ -32,29 +32,31 @@
 		<div class="col-sm-8 outer-content-div">
 			<?php
 			if(count($data) > 1) {
+				echo '<table class="table table-striped" id="all-task-table">
+					<thead>
+					  <tr>
+						<th>Message</th>
+						<th>Due Date</th>
+						<th>Status</th>
+						<th></th>
+					  </tr>
+					</thead>
+					<tbody>';
+				foreach ($data as $value) {
+					echo '<tr>
+							<td><strong>'.ucfirst($value->message).'</strong></td>
+							<td>'.$value->duedate.'</td>
+							<td>'.$value->isdone.'</td>
+							<td><a id="edit-task-icon" href="index.php?page=tasks&action=show&id='.$value->id.'"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
+						</tr>';
+				}
+				echo '</tbody>
+				  </table>';
+			}else {
+				echo '<h1>You do not have any tasks!</h1>';
+			}
 			
-			}
-			echo '<table class="table table-striped" id="all-task-table">
-			    <thead>
-			      <tr>
-			        <th>Message</th>
-			        <th>Due Date</th>
-			        <th>Status</th>
-			        <th></th>
-			      </tr>
-			    </thead>
-			    <tbody>';
-			foreach ($data as $value) {
-				echo '<tr>
-						<td><strong>'.ucfirst($value->message).'</strong></td>
-						<td>'.$value->duedate.'</td>
-						<td>'.$value->isdone.'</td>
-						<td><a id="edit-task-icon" href="index.php?page=tasks&action=show&id='.$value->id.'"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
-					</tr>';
-			}
-			echo '</tbody>
-			  </table>';
-			  ?>
+			?>
 		</div>
 		<div class="col-sm-2"></div>
 	</div>

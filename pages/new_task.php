@@ -28,10 +28,64 @@
 <body>
 <div class="container">
 	<?php include 'navbar.php';?>
-	<div class="row"></div>
+	<h1></h1>
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8 outer-content-div">
+			<h1 class="form-title-head">New Task</h1>
+			<form class="form-horizontal" action="index.php?page=tasks&action=create" method="POST">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="message">Message:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="message" placeholder="Enter message" name="message" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="createddate">Created Date:</label>
+					<div class="col-sm-8">
+						<input type="date" class="form-control" id="createddate" name="createddate" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="duedate">Due Date:</label>
+					<div class="col-sm-8">
+						<input type="date" class="form-control" id="duedate" name="duedate" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="ownerid">Owner id:</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" placeholder="Enter owner id" id="ownerid" name="ownerid" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="owneremail">Owner email:</label>
+					<div class="col-sm-8">
+						<input type="email" class="form-control" placeholder="Enter owner email" id="owneremail" name="owneremail" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="isdone">Is done:</label>
+					<div class="col-sm-8">
+						<select name="isdone" class="form-control" required>
+							<option value="0" selected>No</option>						
+							<option value="1">Yes</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-8">
+						<button type="submit" class="btn btn-default" id="register-submit-btn">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
 </div>
 
-<form action="index.php?page=tasks&action=create" method="post">
+<!-- 
+form action="index.php?page=tasks&action=create" method="post">
 	Message: <input type="text" name="message" required><br>
     Created Date: <input type="date" name="createddate" required><br>
     Due Date: <input type="date" name="duedate" required><br>
@@ -40,6 +94,7 @@
     Status: <input type="text" name="isdone" required><br>
     <input type="submit" value="Save">
 </form>
+ -->
 
 
 

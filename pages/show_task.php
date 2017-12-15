@@ -39,7 +39,7 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="message">Message:</label>
 					<div class="col-sm-8">
-						<input type="text" class="form-control" id="message" value="<?php echo $data->message;?>" name="message" required>
+						<input type="text" class="form-control" id="message" value="<?php echo ucfirst($data->message);?>" name="message" required>
 					</div>
 				</div>
 				<div class="form-group">
@@ -69,14 +69,33 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="isdone">Is done?:</label>
 					<div class="col-sm-8">
-						<input type="text" class="form-control" id="isdone" value="<?php echo $data->isdone;?>" name="isdone" required>
+						<select name="isdone" class="form-control">
+							<?php
+							if($data->isdone == 0) {
+								echo '
+									<option value="1">1</option>
+									<option value="0" selected>0</option>';
+							}else {
+								echo '
+									<option value="1" selected>1</option>
+									<option value="0">0</option>';
+							}
+							?>
+						</select>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-8">
-						<button type="submit" class="btn btn-default" id="register-submit-btn">Submit</button>
+						<button type="submit" class="btn btn-default" id="register-submit-btn">Save</button>
 					</div>
 				</div>
+			</form>
+			<form class="form-horizontal" action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
+			    <div class="form-group">
+			    	<div class="col-sm-offset-2 col-sm-8">
+						<button type="submit" class="btn btn-danger" form="form1" value="delete">Delete</button>
+					</div>
+			    </div>
 			</form>
 		</div>
 		<div class="col-sm-2"></div>
@@ -88,6 +107,7 @@
 
 // print_r($data);
 ?>
+<!-- 
 <form action="index.php?page=tasks&action=edit&id=<?php echo $data->id;?>" method="post">
 	Message: <input type="text" name="message" value="<?php echo $data->message;?>"><br>
     Created Date: <input type="date" value="<?php echo $data->createddate;?>" name="createddate"><br>
@@ -100,6 +120,7 @@
 <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
     <button type="submit" form="form1" value="delete">Delete</button>
 </form>
+ -->
 
 
 

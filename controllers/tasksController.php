@@ -32,7 +32,7 @@ class tasksController extends http\controller
         		self::getTemplate('all_tasks', $records);
            } else {
 
-               echo 'you must be logged in to view tasks';
+               echo '<h1>you must be logged in to view tasks</h1>';
            }
 
     }
