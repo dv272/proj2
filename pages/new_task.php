@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>The HTML5 Herald</title>
+    <title>TaskManager - New Task</title>
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
 
@@ -55,13 +55,13 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="ownerid">Owner id:</label>
 					<div class="col-sm-8">
-						<input type="text" class="form-control" placeholder="Enter owner id" id="ownerid" name="ownerid" required>
+						<input type="text" class="form-control" value="<?php echo $_SESSION['userID']?>" id="ownerid" name="ownerid" required disabled>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="owneremail">Owner email:</label>
 					<div class="col-sm-8">
-						<input type="email" class="form-control" placeholder="Enter owner email" id="owneremail" name="owneremail" required>
+						<input type="email" class="form-control" value="<?php echo $_SESSION['emailID'];?>" id="owneremail" name="owneremail" required disabled>
 					</div>
 				</div>
 				<div class="form-group">

@@ -4,9 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>The HTML5 Herald</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
+    <title>TaskManager - My Task</title>
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">
 	<!-- Latest compiled and minified CSS -->
@@ -27,6 +25,13 @@
     ?>
 </head>
 <body>
+<?php 
+	 function formatter($temp) {
+	 	$arr = explode(' ',$temp);
+	 	$arr = explode('-',$arr[0]);
+	 	return $arr[0].'-'.$arr[1].'-'.$arr[2];
+	 }
+?>
 
 <div class="container">
 	<?php include 'navbar.php';?>
@@ -45,25 +50,25 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="createddate">Created Date:</label>
 					<div class="col-sm-8">
-						<input type="date" class="form-control" id="createddate" value="<?php echo $data->createddate;?>" name="createddate" required>
+						<input type="date" class="form-control" id="createddate" value="<?php echo formatter(''.$data->createddate.'');?>" name="createddate" required>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="duedate">Due Date:</label>
 					<div class="col-sm-8">
-						<input type="date" class="form-control" id="duedate" value="<?php echo $data->duedate;?>" name="duedate" required>
+						<input type="date" class="form-control" id="duedate" value="<?php echo formatter(''.$data->duedate.'');?>" name="duedate" required>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="ownerid">Owner id:</label>
 					<div class="col-sm-8">
-						<input type="text" class="form-control" value="<?php echo $data->ownerid;?>" id="ownerid" name="ownerid" required>
+						<input type="text" class="form-control" value="<?php echo $data->ownerid;?>" id="ownerid" name="ownerid" required disabled>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="owneremail">Owner email:</label>
 					<div class="col-sm-8">
-						<input type="email" class="form-control" value="<?php echo $data->owneremail;?>" id="owneremail" name="owneremail" required>
+						<input type="email" class="form-control" value="<?php echo $data->owneremail;?>" id="owneremail" name="owneremail" required disabled>
 					</div>
 				</div>
 				<div class="form-group">
@@ -73,12 +78,12 @@
 							<?php
 							if($data->isdone == 0) {
 								echo '
-									<option value="1">1</option>
-									<option value="0" selected>0</option>';
+									<option value="1">Yes</option>
+									<option value="0" selected>No</option>';
 							}else {
 								echo '
-									<option value="1" selected>1</option>
-									<option value="0">0</option>';
+									<option value="1" selected>Yes</option>
+									<option value="0">No</option>';
 							}
 							?>
 						</select>

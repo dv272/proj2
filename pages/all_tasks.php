@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>The HTML5 Herald</title>
+    <title>TaskManager - Home</title>
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
 
@@ -43,10 +43,11 @@
 					</thead>
 					<tbody>';
 				foreach ($data as $value) {
+					$status = ($value->isdone) == 0 ? "Incomplete" : "Done";
 					echo '<tr>
 							<td><strong>'.ucfirst($value->message).'</strong></td>
 							<td>'.$value->duedate.'</td>
-							<td>'.$value->isdone.'</td>
+							<td>'.$status.'</td>
 							<td><a id="edit-task-icon" href="index.php?page=tasks&action=show&id='.$value->id.'"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
 						</tr>';
 				}

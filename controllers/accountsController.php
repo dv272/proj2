@@ -131,6 +131,7 @@ class accountsController extends http\controller
 
                 session_start();
                 $_SESSION["userID"] = $user->id;
+                $_SESSION['emailID'] = $user->email;
 
                 //forward the user to the show all todos page
                 print_r($_SESSION);
