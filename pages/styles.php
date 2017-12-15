@@ -37,13 +37,16 @@
 		color: #2d2b2b;
 		text-decoration: none;
 	}
+	#edit-task-icon:hover {
+		color:
+	}
 	#all-task-table {
 		color: #2d2b2b;
-		font-size: 20px;
+		font-size: 16px;
 	}
 	thead {
 		font-family: sans-serif;
-		font-size: 21px;
+		font-size: 17px;
 	}
 	#account-head-title {
 		padding-left: 30px;
