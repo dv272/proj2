@@ -66,7 +66,7 @@ class accountsController extends http\controller
             //you may want to send the person to a
             // login page or create a session and log them in
             // and then send them to the task list page and a link to create tasks
-            header("Location: index.php?page=tasks&action=all");
+            header("Location: index.php");
 
         } else {
             //You can make a template for errors called error.php
@@ -104,8 +104,8 @@ class accountsController extends http\controller
     public static function delete() {
 
         $record = accounts::findOne($_REQUEST['id']);
-        session_destroy();
         unset($_SESSION['userID']);
+        session_destroy();
         $record->delete();
         header("Location: index.php");
     }
