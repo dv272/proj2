@@ -47,79 +47,59 @@
 			<div class="row">
 				<div class="col-sm-12 outer-content-div">
 					<h1 class="form-title-head"></h1>
-					<form class="form-horizontal" action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="POST">
+					<form class="form-horizontal" method="POST">
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="fname">First Name:</label>
+							<label class="control-label col-sm-2 custom-form-label" for="fname">First Name:</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="fname" value="<?php echo ucfirst($data->fname);?>" name="fname" required>
+                                <h4><?php echo ucfirst($data->fname);?></h4>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="lname">Last Name:</label>
+							<label class="control-label col-sm-2 custom-form-label" for="lname">Last Name:</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="lname" value="<?php echo $data->lname;?>" name="lname" required>
+                                <h4><?php echo ucfirst($data->lname);?></h4>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="email">Email:</label>
+							<label class="control-label col-sm-2 custom-form-label" for="email">Email:</label>
 							<div class="col-sm-8">
-								<input type="email" class="form-control" id="email" value="<?php echo $data->email;?>" name="email" required>
+                                <h4><?php echo $data->email;?></h4>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="ownerid">Phone:</label>
+							<label class="control-label col-sm-2 custom-form-label" for="ownerid">Phone:</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" value="<?php echo $data->phone;?>" id="phone" name="phone" required>
+                                <h4><?php echo $data->phone;?></h4>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="birthday">Birthday:</label>
+							<label class="control-label col-sm-2 custom-form-label" for="birthday">Birthday:</label>
 							<div class="col-sm-8">
-								<input type="date" class="form-control" value="<?php echo $data->birthday;?>" id="birthday" name="birthday" required>
+                                <h5><?php echo $data->birthday;?></h5>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="isdone">Gender:</label>
+							<label class="control-label col-sm-2 custom-form-label" for="isdone">Gender:</label>
 							<div class="col-sm-8">
 								<?php
 									if ($data->gender == 'male' || $data->gender == 'Male') {
-										echo '<label class="radio-inline">
-											<input type="radio" name="gender" value="male" checked>Male
-										</label>
-										<label class="radio-inline">
-											<input type="radio" name="gender" value="female">Female
-										</label>';
+										echo '<h5>Male</h5>';
 									}elseif ($data->gender == 'female' || $data->gender == 'Female') {
-										echo '<label class="radio-inline">
-											<input type="radio" name="gender" value="male">Male
-										</label>
-										<label class="radio-inline">
-											<input type="radio" name="gender" value="female" checked>Female
-										</label>';
+										echo '<h5>Female</h5>';
 									}else {
-										echo '<label class="radio-inline">
-											<input type="radio" name="gender" value="male">Male
-										</label>
-										<label class="radio-inline">
-											<input type="radio" name="gender" value="female">Female
-										</label>';
+										echo '<h5></h5>';
 									}
 								?>
 							</div>
 						</div>
+					</form>
+					<div class="form-horizontal" id="form1">
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-8">
-								<button type="submit" class="btn btn-default" id="register-submit-btn">Save</button>
+								<a style="color:white; text-decoration:none;" href="index.php?page=accounts&action=edit&id=<?php echo $data->id;?>"><button class="btn btn-danger" value="edit" id="edit-btn" >Edit</button></a>
 							</div>
 						</div>
-					</form>
-					<form class="form-horizontal" action="index.php?page=accounts&action=delete&id=<?php echo $data->id;?>" method="post" id="form1">
-						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-8">
-								<button type="submit" class="btn btn-danger" form="form1" value="delete">Delete</button>
-							</div>
-						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -127,30 +107,6 @@
 	</div>
 </div>
 
-<!-- 
-<h1>Email: <?php echo $data->email; ?></h1>
-<h1>First Name: <?php echo $data->fname; ?></h1>
-<h1>Last Name: <?php echo $data->lname; ?></h1>
-
-
-
-<form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
-
-    First name: <input type="text" name="fname" value="<?php echo $data->fname; ?>" required><br>
-
-    Last name: <input type="text" name="lname" value="<?php echo $data->lname; ?>" required><br>
-    Email: <input type="text" name="email" value="<?php echo $data->email; ?>" required><br>
-    Phone: <input type="text" name="phone" value="<?php echo $data->phone; ?>" required><br>
-    Birthday: <input type="text" name="birthday" value="<?php echo $data->birthday; ?>" required><br>
-    Gender: <input type="text" name="gender" value="<?php echo $data->gender; ?>"><br>
-    <input type="submit" value="Submit form">
-</form>
-
-
-<form action="index.php?page=accounts&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
-    <button type="submit" form="form1" value="delete">Delete</button>
-</form>
- -->
 
 
 <script src="js/scripts.js"></script>

@@ -1,7 +1,10 @@
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+
 <style>
 	body {
 		background: linear-gradient(white, lightgray);
 		height: 800px;
+		font-family: 'Noto Sans', sans-serif;
 	}
 	a{
 		text-decoration: none;
@@ -51,6 +54,9 @@
 	#account-head-title {
 		padding-left: 30px;
 		padding-bottom: 10px;
+	}
+	.custom-form-label{
+		margin-top: 1px;
 	}
 	
 	/*

@@ -40,68 +40,64 @@
 		<div class="col-sm-2"></div>
 		<div class="col-sm-8 outer-content-div">
 			<h1 class="form-title-head"></h1>
-			<form class="form-horizontal" action="index.php?page=tasks&action=edit&id=<?php echo $data->id;?>" method="POST">
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="message">Message:</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="message" value="<?php echo ucfirst($data->message);?>" name="message" required>
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="form-title-head"></h1>
+					<form class="form-horizontal" method="POST">
+						<div class="form-group">
+							<label class="control-label col-sm-2 custom-form-label" for="message">Message:</label>
+							<div class="col-sm-8">
+								<h4><?php echo ucfirst($data->message);?></h4>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2 custom-form-label" for="createddate">Created Date:</label>
+							<div class="col-sm-8">
+								<h4><?php echo formatter(''.$data->createddate.'');?></h4>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2 custom-form-label" for="duedate">Due Date:</label>
+							<div class="col-sm-8">
+								<h4><?php echo formatter(''.$data->duedate.'');?></h4>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2 custom-form-label" for="ownerid">Owner id:</label>
+							<div class="col-sm-8">
+								<h4><?php echo $data->ownerid;?></h4>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2 custom-form-label" for="birthday">Owner Email:</label>
+							<div class="col-sm-8">
+								<h5><?php echo $data->owneremail;?></h5>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2 custom-form-label" for="isdone">Is Done?:</label>
+							<div class="col-sm-8">
+								<?php
+									if ($data->isdone == 0) {
+										echo '<h5>No</h5>';
+									}elseif ($data->isdone == 1) {
+										echo '<h5>Yes</h5>';
+									}else {
+										echo '<h5></h5>';
+									}
+								?>
+							</div>
+						</div>
+					</form>
+					<div class="form-horizontal" id="form1">
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-8">
+								<a style="color:white; text-decoration:none;" href="index.php?page=tasks&action=edit&id=<?php echo $data->id;?>"><button class="btn btn-danger" value="edit" id="edit-btn" >Edit</button></a>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="createddate">Created Date:</label>
-					<div class="col-sm-8">
-						<input type="date" class="form-control" id="createddate" value="<?php echo formatter(''.$data->createddate.'');?>" name="createddate" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="duedate">Due Date:</label>
-					<div class="col-sm-8">
-						<input type="date" class="form-control" id="duedate" value="<?php echo formatter(''.$data->duedate.'');?>" name="duedate" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="ownerid">Owner id:</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" value="<?php echo $data->ownerid;?>" id="ownerid" name="ownerid" required disabled>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="owneremail">Owner email:</label>
-					<div class="col-sm-8">
-						<input type="email" class="form-control" value="<?php echo $data->owneremail;?>" id="owneremail" name="owneremail" required disabled>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="isdone">Is done?:</label>
-					<div class="col-sm-8">
-						<select name="isdone" class="form-control">
-							<?php
-							if($data->isdone == 0) {
-								echo '
-									<option value="1">Yes</option>
-									<option value="0" selected>No</option>';
-							}else {
-								echo '
-									<option value="1" selected>Yes</option>
-									<option value="0">No</option>';
-							}
-							?>
-						</select>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-8">
-						<button type="submit" class="btn btn-default" id="register-submit-btn">Save</button>
-					</div>
-				</div>
-			</form>
-			<form class="form-horizontal" action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
-			    <div class="form-group">
-			    	<div class="col-sm-offset-2 col-sm-8">
-						<button type="submit" class="btn btn-danger" form="form1" value="delete">Delete</button>
-					</div>
-			    </div>
-			</form>
+			</div>
 		</div>
 		<div class="col-sm-2"></div>
 	</div>
