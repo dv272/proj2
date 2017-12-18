@@ -38,7 +38,7 @@
 		<div class="col-sm-2"></div>
 		<div class="col-sm-8 outer-content-div">
 			<?php
-			if(count($data) > 1) {
+			if(count($data) >= 1 && $data != null) {
 				echo '<table class="table table-striped" id="all-task-table">
 					<thead>
 					  <tr>

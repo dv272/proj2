@@ -50,13 +50,13 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="createddate">Created Date:</label>
 					<div class="col-sm-8">
-						<input type="date" class="form-control" id="createddate" value="<?php echo formatter(''.$data->createddate.'');?>" name="createddate" required>
+						<input type="date" class="form-control" id="createddate" value="<?php echo formatter(''.$data->createddate.'');?>" name="createddate" required readonly>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="duedate">Due Date:</label>
 					<div class="col-sm-8">
-						<input type="date" class="form-control" id="duedate" value="<?php echo formatter(''.$data->duedate.'');?>" name="duedate" required>
+						<input type="date" class="form-control" id="duedate" value="<?php echo formatter(''.$data->duedate.'');?>" name="duedate" required readonly>
 					</div>
 				</div>
 				<div class="form-group">

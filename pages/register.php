@@ -23,6 +23,8 @@
     <?php include 'styles.php';
     	session_start();
     ?>
+    
+    
 </head>
 
 <body>
@@ -79,7 +81,7 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="pwd">Password:</label>
 					<div class="col-sm-8">
-						<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required>
+						<input type="password" pattern="^.{6,12}$" class="form-control" id="password" placeholder="Enter password" name="password" required>
 					</div>
 				</div>
 				<div class="form-group">

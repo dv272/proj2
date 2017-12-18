@@ -63,11 +63,11 @@
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="email">Email:</label>
 							<div class="col-sm-8">
-								<input type="email" class="form-control" id="email" value="<?php echo $data->email;?>" name="email" required>
+								<input type="email" class="form-control" id="email" value="<?php echo $data->email;?>" name="email" required readonly>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="ownerid">Phone:</label>
+							<label class="control-label col-sm-2" for="phone">Phone:</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" value="<?php echo $data->phone;?>" id="phone" name="phone" required>
 							</div>
@@ -79,7 +79,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="isdone">Gender:</label>
+							<label class="control-label col-sm-2" for="gender">Gender:</label>
 							<div class="col-sm-8">
 								<?php
 									if ($data->gender == 'male' || $data->gender == 'Male') {

@@ -170,7 +170,8 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'save';
         $routes[] = $route;
-        //this is the route for the reg form
+        
+        //the route for the new registration form
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'register';
@@ -178,7 +179,8 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'register';
         $routes[] = $route;
-        //this handles the reg post to create the user
+        
+        //this route handles the registration post to save the user
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'register';
